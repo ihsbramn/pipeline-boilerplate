@@ -58,16 +58,16 @@ pipeline {
                     "PRD Deploy Stage" : {
                         // Buy drawingbook
                         // ip gitlab
-                        // sh "docker run -v ${BUILD_DIR}/deploy:/home/deploy --rm bitnami/git:latest git clone {{repo_cicd}} /home/deploy"
+                        sh "docker run -v ${BUILD_DIR}/deploy:/home/deploy --rm bitnami/git:latest git clone {{repo_cicd}} /home/deploy"
                         // Run drawingbook 
-                        // sh "docker run -t -v ${BUILD_DIR}/deploy:/home --rm allodev/ansible sh -c 'ansible-playbook /home/ansible-playbook.yml -i /home/inventory.ini'"
+                        sh "docker run -t -v ${BUILD_DIR}/deploy:/home --rm allodev/ansible sh -c 'ansible-playbook /home/ansible-playbook.yml -i /home/inventory.ini'"
                     },
                     "DRC Deploy Stage" : {
                         // Buy drawingbook
                         // ip gitlab
-                        // sh "docker run -v ${BUILD_DIR}/deploy:/home/deploy --rm bitnami/git:latest git clone {{repo_cicd}} /home/deploy"
+                        sh "docker run -v ${BUILD_DIR}/deploy:/home/deploy --rm bitnami/git:latest git clone {{repo_cicd}} /home/deploy"
                         // Run drawingbook 
-                        // sh "docker run -t -v ${BUILD_DIR}/deploy:/home --rm allodev/ansible sh -c 'ansible-playbook /home/ansible-playbook.yml -i /home/inventory.ini'"  
+                        sh "docker run -t -v ${BUILD_DIR}/deploy:/home --rm allodev/ansible sh -c 'ansible-playbook /home/ansible-playbook.yml -i /home/inventory.ini'"  
                     }
                 )
             }
